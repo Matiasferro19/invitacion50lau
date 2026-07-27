@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f6ecd9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  overflow-x: hidden;
+  color: #5a3a2a;
+}
+
+/* === PÉTALOS FLOTANTES === */
+
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -10px;
+  background: radial-gradient(circle at 30% 30%, #d98a9a, #8a1c2b);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0;
+  animation: petal-fall linear infinite;
+}
+
+@keyframes petal-fall {
+  0%   { opacity: 0; transform: translateY(-10px) rotate(0deg); }
+  10%  { opacity: 0.5; }
+  90%  { opacity: 0.35; }
+  100% { opacity: 0; transform: translateY(110vh) rotate(220deg); }
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.container {
+  position: relative;
+  z-index: 10;
+  background: #f9f1e2;
+  max-width: 460px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0;
+  box-shadow:
+    0 20px 60px rgba(90, 58, 42, 0.25),
+    0 0 0 1px rgba(191, 155, 90, 0.5);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* === IMAGEN TEMÁTICA === */
+.theme-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f9f1e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.theme-image-text {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(249, 241, 226, 0.9);
+  color: #7a1f2b;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 2px;
+  border: 1px solid #bf9b5a;
+  white-space: nowrap;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* === ENCABEZADO === */
+.header {
+  padding: 4px 25px 0 25px;
+}
+
+.title,
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  color: #7a1f2b;
+  line-height: 1.2;
+}
+
+.title:empty,
+.subtitle:empty {
+  display: none;
+}
+
+/* === TARJETA CON MARCO DORADO === */
+.invitation-card {
+  margin: 22px 20px 25px 20px;
+  padding: 28px 22px;
+  background: #f9f1e2;
+  border-radius: 4px;
+  border: 1px solid #bf9b5a;
+  position: relative;
+}
+
+.invitation-card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(191, 155, 90, 0.4);
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* === INFORMACIÓN DEL EVENTO === */
+.event-info {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 16px;
+  background: rgba(191, 155, 90, 0.06);
+  border-radius: 4px;
+  border-left: 3px solid #8a1c2b;
+  transition: all 0.3s ease;
+}
+
+.info-row:hover {
+  background: rgba(191, 155, 90, 0.12);
+}
+
+.info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin-right: 16px;
+  background: linear-gradient(135deg, #8a1c2b, #6b1420);
+}
+
+.info-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.info-text {
+  flex: 1;
+  text-align: left;
+  font-size: 0.85em;
+  color: rgba(90, 58, 42, 0.7);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.info-text strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.55em;
+  color: #7a1f2b;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+
+.info-text small {
+  display: block;
+  font-size: 0.82em;
+  color: rgba(90, 58, 42, 0.55);
+  margin-top: 3px;
+  letter-spacing: 0.2px;
+  text-transform: none;
+  line-height: 1.4;
+}
+
+/* === SEPARADOR === */
+.separator {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator-rose {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 3px rgba(138, 28, 43, 0.2));
+}
+
+/* === CUENTA REGRESIVA === */
+.countdown-section {
+  margin-bottom: 4px;
+}
+
+.countdown-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #7a1f2b;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.time-box {
+  flex: 1;
+  max-width: 80px;
+  border-radius: 6px;
+  padding: 12px 4px;
+  color: #f9f1e2;
+  box-shadow: 0 4px 12px rgba(90, 58, 42, 0.2);
+}
+
+.time-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.62em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* === BOTONES === */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #f9f1e2;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(90, 58, 42, 0.25);
+  min-height: 48px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(90, 58, 42, 0.35);
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 6px 30px 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05em;
+  color: rgba(90, 58, 42, 0.75);
+  line-height: 1.8;
+}
+
+/* === BOTÓN DE MÚSICA === */
+.music-control {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(249, 241, 226, 0.95);
+  border: 1px solid #bf9b5a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 3px 12px rgba(90, 58, 42, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.music-control:hover {
+  transform: scale(1.08);
+}
+
+.music-control svg {
+  width: 20px;
+  height: 20px;
+}
+
+.music-control.muted svg {
+  opacity: 0.4;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .invitation-card { margin: 18px 14px 20px 14px; padding: 22px 16px; }
+  .time-number      { font-size: 1.6em; }
+  .countdown        { gap: 6px; }
+  .info-text        { font-size: 0.78em; }
+  .info-text strong { font-size: 1.4em; }
+  .footer           { padding: 4px 22px 26px; font-size: 0.98em; }
+}
+
+@media (max-width: 360px) {
+  .invitation-card { padding: 18px 12px; }
+  .time-number      { font-size: 1.4em; }
+  .time-label       { font-size: 0.55em; }
+  .info-icon        { width: 36px; height: 36px; margin-right: 12px; }
+  .btn              { font-size: 0.7em; padding: 13px 16px; }
+}
+
+/* === TÁCTIL === */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
