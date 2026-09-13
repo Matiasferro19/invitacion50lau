@@ -14,7 +14,7 @@ const CONFIG = {
   fecha: "Sabado 8 de Agosto",
   hora: "20:00 Hs",
   lugar: "Mi Casa",
-  direccion: "Malabia 5547",
+  direccion: "Avenida 123",
 
   // === FECHA PARA EL CONTADOR (formato: AAAA-MM-DDTHH:mm:ss) ===
   // Importante: usa el formato año-mes-día con guiones
@@ -22,10 +22,10 @@ const CONFIG = {
 
   // === CONTACTO ===
   // Número de WhatsApp (incluye código de país: 549 + código de área + número)
-  whatsapp: "5491153695181",
+  whatsapp: "5491130370463",
 
   // Link de Google Maps (pega aquí el link completo)
-  googleMaps: "https://maps.app.goo.gl/BAyLmEWQV6REBPKk9",
+  googleMaps: "https://maps.app.goo.gl/hYDUgPk1Bx6jz7CEA",
 
   // === PERSONALIZACIÓN VISUAL ===
   // Tema de colores (opciones: "dorado", "personalizado")
