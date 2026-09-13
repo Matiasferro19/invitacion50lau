@@ -13,7 +13,7 @@ const CONFIG = {
   // === INFORMACIÓN DEL EVENTO ===
   fecha: "Sabado 8 de Agosto",
   hora: "20:00 Hs",
-  lugar: "Mi Casa",
+  lugar: "Invitate Invitaciones Web",
   direccion: "Avenida 123",
 
   // === FECHA PARA EL CONTADOR (formato: AAAA-MM-DDTHH:mm:ss) ===
